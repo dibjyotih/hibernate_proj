@@ -1,0 +1,25 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Oracle JDBC driver -->
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/testdb</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+
+        <!-- Hibernate Dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Show SQL Queries in Console -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Automatically create table -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- Your mapping file -->
+        <mapping resource="Emp.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
